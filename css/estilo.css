@@ -1,0 +1,110 @@
+/**index**/
+
+.bodyIndex{
+	display:grid;
+	grid-template-columns: 50% 50%;
+	grid-template-rows: auto auto auto auto;
+	grid-template-areas: 
+	"header header"
+	"titulo titulo"
+	"mainIndex imgInicio"
+	"footer footer"
+}
+header{grid-area: header;
+    display: flex;
+    flex-direction:row;
+	flex-wrap: wrap;
+	font-size: 25px;}
+.titulo{ grid-area: titulo; }
+.mainIndex{grid-area: mainIndex;
+	display: flex;
+	font-size: 30px;
+text-align: left;}
+.imgInicio{grid-area: imgInicio;}
+footer{grid-area: footer;}
+body{
+	background-image: url(https://thumbs.dreamstime.com/b/fondo-de-tierra-41040997.jpg);
+	overflow-x: none;}
+
+
+nav li{ padding: 20px;
+		font-size: 25px;
+		list-style: none;
+    display:inline;
+ justify-content: flex-end;
+}
+
+.listaServicios{
+	
+	display: list-item;
+}
+
+a{
+	text-decoration: none;
+}
+
+/** grid contacto (no lo puedo acomodar, me quedo mal y no se como arreglarlo)**/
+.gridContacto{
+ display: grid;
+ grid-template-columns: 50% 50%;
+ grid-template-rows: auto auto auto auto;
+ grid-template-areas: 
+ "header header"
+ "txtContacto txtContacto"
+ "formulario imgContacto"
+ "footerContacto footerContacto";
+}
+header { grid-area: header;
+display: flex;
+    flex-direction:row;
+	flex-wrap: wrap;
+	font-size: 25px; }
+.txtContacto{grid-area: txtContacto;
+display: flex;
+align-content: flex-start;}
+.formulario {grid-area: formulario;
+display: flex;
+align-content: flex-start;
+}
+.footerContacto{
+grid-area: footerContacto;
+}
+
+/**animaciones**/
+@keyframes desaparecer {
+	0% {opacity: 1;}
+	100%{opacity: 0;}
+	
+}
+.mainIndex{
+	animation-name: desaparecer;
+	animation-iteration-count: infinite;
+	animation-duration: 2s;
+}
+@keyframes movimiento {
+	0%{transform: translateX(100px);}
+	25%{transform: skew(60deg,60deg);}
+	50%{transform: rotate(45deg);}
+	75%{transform: translate(100px,100px);}
+	100%{transform: scale(2,2);}
+}
+.animacion{
+	animation-name: movimiento;
+	animation-iteration-count: infinite;
+	animation-duration: 2s;
+}
+
+
+
+
+/**media index**/
+@media only screen and ( max-width: 768px){
+nav	li { padding: 5px; 
+}
+.mainIndex{
+	font-size: 20px;
+}
+.imgInicio{
+	width: 99px;
+}
+
